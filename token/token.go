@@ -3,17 +3,19 @@ package token
 type TokenType string
 
 const (
-	IF      TokenType = "IF"
-	DAY     TokenType = "DAY"
-	ODD     TokenType = "ODD"
-	EVEN    TokenType = "EVEN"
-	ADD     TokenType = "ADD"
-	STRING  TokenType = "STRING"
-	TIME    TokenType = "TIME"
 	COMMA   TokenType = ","
 	PERIOD  TokenType = "."
 	ILLEGAL TokenType = "ILLEGAL"
 	EOF     TokenType = "EOF"
+
+	// Keywords
+	IF     TokenType = "IF"
+	DAY    TokenType = "DAY"
+	ODD    TokenType = "ODD"
+	EVEN   TokenType = "EVEN"
+	ADD    TokenType = "ADD"
+	STRING TokenType = "STRING"
+	TIME   TokenType = "TIME"
 )
 
 type Token struct {
@@ -22,5 +24,11 @@ type Token struct {
 }
 
 var keywords = map[string]TokenType{
-	"if": IF,
+	"IF":     IF,
+	"DAY":    DAY,
+	"ODD":    ODD,
+	"EVEN":   EVEN,
+	"ADD":    ADD,
+	"STRING": STRING,
+	"TIME":   TIME,
 }

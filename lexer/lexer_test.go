@@ -25,9 +25,10 @@ func TestNextToken(t *testing.T) {
 		{token.ADD, "ADD"},
 		{token.STRING, "quite an odd day!"},
 		{token.PERIOD, "."},
+		{token.EOF, ""},
 	}
 
-	l := NewLexer(input)
+	l := New(input)
 
 	for i, tt := range tests {
 		tok := l.NextToken()
