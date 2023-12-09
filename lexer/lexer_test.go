@@ -10,9 +10,7 @@ func TestNextToken(t *testing.T) {
 	// 	input := `
 	//   IF DAY ODD, ADD "quite an odd day!", TIME 12:30pm.
 	// `
-	input := `
-  IF DAY ODD, ADD "quite an odd day!".
-`
+	input := `IF DAY ODD, ADD "quite an odd day!".`
 
 	tests := []struct {
 		expectedType    token.TokenType
