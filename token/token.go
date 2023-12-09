@@ -1,4 +1,4 @@
-package main
+package token
 
 type TokenType string
 
@@ -19,6 +19,6 @@ type Token struct {
 	Literal string
 }
 
-func NewToken(Type TokenType, Literal string) Token {
-	return Token{Type: Type, Literal: Literal}
+var keywords = map[string]TokenType{
+	"if": IF,
 }
