@@ -8,8 +8,10 @@ const (
 	ODD     TokenType = "ODD"
 	EVEN    TokenType = "EVEN"
 	ADD     TokenType = "ADD"
+	STRING  TokenType = "STRING"
 	TIME    TokenType = "TIME"
 	COMMA   TokenType = ","
+	PERIOD  TokenType = "."
 	ILLEGAL TokenType = "ILLEGAL"
 	EOF     TokenType = "EOF"
 )
