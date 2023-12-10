@@ -11,6 +11,7 @@ const (
 
 	// Keywords
 	IF     = "IF"
+	ELSE   = "ELSE"
 	DAY    = "DAY"
 	ODD    = "ODD"
 	EVEN   = "EVEN"
@@ -26,6 +27,7 @@ type Token struct {
 
 var keywords = map[string]TokenType{
 	"IF":     IF,
+	"ELSE":   ELSE,
 	"DAY":    DAY,
 	"ODD":    ODD,
 	"EVEN":   EVEN,

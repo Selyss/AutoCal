@@ -15,6 +15,6 @@ func main() {
 	}
 	fmt.Printf("Hello %s! This is AutoCal, your smart calendar automation tool.\n", // TODO: add cobra
 		user.Username)
-	fmt.Printf("Start by typing in commands\n")
+	fmt.Printf("Start by typing in commands:\n")
 	repl.Start(os.Stdin, os.Stdout)
 }
