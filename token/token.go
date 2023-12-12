@@ -11,6 +11,8 @@ const (
 	COMMA   = ","
 	PERIOD  = "."
 	COLON   = ":"
+	LPAREN  = "("
+	RPAREN  = ")"
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
 	IDENT   = "IDENT"
@@ -25,6 +27,13 @@ const (
 	STRING = "STRING"
 	TIME   = "TIME"
 	COLOR  = "COLOR"
+	TITLE  = "TITLE"
+	DESC   = "DESC"
+
+	// Colors
+	RED   = "RED"
+	BLUE  = "BLUE"
+	GREEN = "GREEN"
 )
 
 var keywords = map[string]TokenType{
@@ -37,6 +46,11 @@ var keywords = map[string]TokenType{
 	"STRING": STRING,
 	"TIME":   TIME,
 	"COLOR":  COLOR,
+	"TITLE":  TITLE,
+	"DESC":   DESC,
+	"RED":    RED,
+	"BLUE":   BLUE,
+	"GREEN":  GREEN,
 }
 
 func LookupIdent(ident string) TokenType {
