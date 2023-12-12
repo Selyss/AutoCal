@@ -1,6 +1,10 @@
 package lexer
 
-import "github.com/Selyss/AutoCal/token"
+import (
+	"strings"
+
+	"github.com/Selyss/AutoCal/token"
+)
 
 type Lexer struct {
 	input        string
@@ -25,7 +29,7 @@ func (l *Lexer) NextToken() token.Token {
 		tok = newToken(token.COMMA, l.ch)
 	case '.':
 		tok = newToken(token.PERIOD, l.ch)
-	case '"':
+	case '"', '\'':
 		tok.Type = token.STRING
 		tok.Literal = l.readString()
 	case 0:
@@ -34,7 +38,7 @@ func (l *Lexer) NextToken() token.Token {
 	default:
 		if isLetter(l.ch) {
 			tok.Literal = l.readIdentifier()
-			tok.Type = token.LookupIdent(tok.Literal)
+			tok.Type = token.LookupIdent(strings.ToUpper(tok.Literal))
 			return tok
 		} else {
 			tok = newToken(token.ILLEGAL, l.ch)
@@ -71,7 +75,7 @@ func (l *Lexer) readString() string {
 	position := l.position + 1 // Skip the opening quote
 	for {
 		l.readChar()
-		if l.ch == '"' || l.ch == 0 {
+		if l.ch == '"' || l.ch == '\'' || l.ch == 0 {
 			break
 		}
 	}
