@@ -8,34 +8,46 @@ type Token struct {
 }
 
 const (
-	COMMA   = ","
-	PERIOD  = "."
-	COLON   = ":"
-	LPAREN  = "("
-	RPAREN  = ")"
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
-	IDENT   = "IDENT"
 
-	// Keywords
-	IF     = "IF"
-	ELSE   = "ELSE"
-	DAY    = "DAY"
-	ODD    = "ODD"
-	EVEN   = "EVEN"
-	ADD    = "ADD"
+	// Identifiers + literals
+	IDENT  = "IDENT"
+	INT    = "INT"
 	STRING = "STRING"
-	TIME   = "TIME"
-	TITLE  = "TITLE"
-	DESC   = "DESC"
 
 	// Colors
 	RED   = "RED"
 	BLUE  = "BLUE"
 	GREEN = "GREEN"
+
+	// Operators
+	GThan = ">"
+	LThan = "<"
+
+	// Delimiters
+	COMMA  = ","
+	PERIOD = "."
+	LPAREN = "("
+	RPAREN = ")"
+
+	// Keywords
+	IF    = "IF"
+	ELSE  = "ELSE"
+	DAY   = "DAY"
+	ODD   = "ODD"
+	EVEN  = "EVEN"
+	ADD   = "ADD"
+	TIME  = "TIME"
+	TITLE = "TITLE"
+	DESC  = "DESC"
 )
 
 var keywords = map[string]TokenType{
+	"RED":   RED,
+	"BLUE":  BLUE,
+	"GREEN": GREEN,
+
 	"IF":     IF,
 	"ELSE":   ELSE,
 	"DAY":    DAY,
@@ -46,9 +58,6 @@ var keywords = map[string]TokenType{
 	"TIME":   TIME,
 	"TITLE":  TITLE,
 	"DESC":   DESC,
-	"RED":    RED,
-	"BLUE":   BLUE,
-	"GREEN":  GREEN,
 }
 
 func LookupIdent(ident string) TokenType {
