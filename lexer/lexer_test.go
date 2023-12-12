@@ -12,17 +12,17 @@ func TestNextToken(t *testing.T) {
 	// `
 	// input := `IF DAY ODD, ADD "quite an odd day!".`
 	input := `
-	IF DAY ODD, ADD "quite an odd day!".
+	IF DAY EVEN, ADD "quite an odd day!".
 
-	IF DAY EVEN, ADD (
-		TITLE "Event!",
-		DESC "This is an event!",
+	IF DAY ODD, ADD (
+		TITLE "Hitting the gym!",
+		DESC "Chest!!!",
 		RED
 	).
+	  
 	ELSE, ADD (
-		TITLE "Other Event!",
-		DESC "This is another event!",
-		BLUE
+		TITLE "Rest day.",
+		GREY
 	).`
 
 	tests := []struct {
@@ -31,22 +31,22 @@ func TestNextToken(t *testing.T) {
 	}{
 		{token.IF, "IF"},
 		{token.DAY, "DAY"},
-		{token.ODD, "ODD"},
+		{token.EVEN, "EVEN"},
 		{token.COMMA, ","},
 		{token.ADD, "ADD"},
 		{token.STRING, "quite an odd day!"},
 		{token.PERIOD, "."},
 		{token.IF, "IF"},
 		{token.DAY, "DAY"},
-		{token.EVEN, "EVEN"},
+		{token.ODD, "ODD"},
 		{token.COMMA, ","},
 		{token.ADD, "ADD"},
 		{token.LPAREN, "("},
 		{token.TITLE, "TITLE"},
-		{token.STRING, "Event!"},
+		{token.STRING, "Hitting the gym!"},
 		{token.COMMA, ","},
 		{token.DESC, "DESC"},
-		{token.STRING, "This is an event!"},
+		{token.STRING, "Chest!!!"},
 		{token.COMMA, ","},
 
 		{token.RED, "RED"},
@@ -57,12 +57,9 @@ func TestNextToken(t *testing.T) {
 		{token.ADD, "ADD"},
 		{token.LPAREN, "("},
 		{token.TITLE, "TITLE"},
-		{token.STRING, "Other Event!"},
+		{token.STRING, "Rest day."},
 		{token.COMMA, ","},
-		{token.DESC, "DESC"},
-		{token.STRING, "This is another event!"},
-		{token.COMMA, ","},
-		{token.BLUE, "BLUE"},
+		{token.GREY, "GREY"},
 		{token.RPAREN, ")"},
 		{token.PERIOD, "."},
 		{token.EOF, ""},

@@ -20,6 +20,7 @@ const (
 	RED   = "RED"
 	BLUE  = "BLUE"
 	GREEN = "GREEN"
+	GREY  = "GREY"
 
 	// Operators
 	GThan = ">"
@@ -47,6 +48,7 @@ var keywords = map[string]TokenType{
 	"RED":   RED,
 	"BLUE":  BLUE,
 	"GREEN": GREEN,
+	"GREY":  GREY,
 
 	"IF":     IF,
 	"ELSE":   ELSE,
