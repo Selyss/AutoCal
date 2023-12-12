@@ -17,12 +17,12 @@ func TestNextToken(t *testing.T) {
 	IF DAY EVEN, ADD (
 		TITLE "Event!",
 		DESC "This is an event!",
-		COLOR RED
+		RED
 	).
 	ELSE, ADD (
 		TITLE "Other Event!",
 		DESC "This is another event!",
-		COLOR BLUE
+		BLUE
 	).`
 
 	tests := []struct {
@@ -49,8 +49,6 @@ func TestNextToken(t *testing.T) {
 		{token.STRING, "This is an event!"},
 		{token.COMMA, ","},
 
-		// TODO: rethink how colors are handled
-		{token.COLOR, "COLOR"},
 		{token.RED, "RED"},
 		{token.RPAREN, ")"},
 		{token.PERIOD, "."},
@@ -64,7 +62,6 @@ func TestNextToken(t *testing.T) {
 		{token.DESC, "DESC"},
 		{token.STRING, "This is another event!"},
 		{token.COMMA, ","},
-		{token.COLOR, "COLOR"},
 		{token.BLUE, "BLUE"},
 		{token.RPAREN, ")"},
 		{token.PERIOD, "."},

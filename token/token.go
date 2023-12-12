@@ -26,7 +26,6 @@ const (
 	ADD    = "ADD"
 	STRING = "STRING"
 	TIME   = "TIME"
-	COLOR  = "COLOR"
 	TITLE  = "TITLE"
 	DESC   = "DESC"
 
@@ -45,7 +44,6 @@ var keywords = map[string]TokenType{
 	"ADD":    ADD,
 	"STRING": STRING,
 	"TIME":   TIME,
-	"COLOR":  COLOR,
 	"TITLE":  TITLE,
 	"DESC":   DESC,
 	"RED":    RED,
