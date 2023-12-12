@@ -2,6 +2,11 @@ package token
 
 type TokenType string
 
+type Token struct {
+	Type    TokenType
+	Literal string
+}
+
 const (
 	COMMA   = ","
 	PERIOD  = "."
@@ -18,12 +23,8 @@ const (
 	ADD    = "ADD"
 	STRING = "STRING"
 	TIME   = "TIME"
+	COLOR  = "COLOR"
 )
-
-type Token struct {
-	Type    TokenType
-	Literal string
-}
 
 var keywords = map[string]TokenType{
 	"IF":     IF,
@@ -34,6 +35,7 @@ var keywords = map[string]TokenType{
 	"ADD":    ADD,
 	"STRING": STRING,
 	"TIME":   TIME,
+	"COLOR":  COLOR,
 }
 
 func LookupIdent(ident string) TokenType {
