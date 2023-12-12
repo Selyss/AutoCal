@@ -10,6 +10,7 @@ type Token struct {
 const (
 	COMMA   = ","
 	PERIOD  = "."
+	COLON   = ":"
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
 	IDENT   = "IDENT"
