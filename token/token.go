@@ -12,6 +12,7 @@ const (
 	EOF     = "EOF"
 
 	// Identifiers + literals
+	LET    = "LET"
 	IDENT  = "IDENT"
 	INT    = "INT"
 	STRING = "STRING"
@@ -63,6 +64,7 @@ var keywords = map[string]TokenType{
 	"TITLE":  TITLE,
 	"DESC":   DESC,
 	"IS":     IS,
+	"LET":    LET,
 }
 
 func LookupIdent(ident string) TokenType {

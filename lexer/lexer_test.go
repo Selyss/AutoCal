@@ -25,7 +25,7 @@ func TestNextToken(t *testing.T) {
 		GREY
 	).
 	
-	commute = (
+	LET commute = (
 		TITLE "Bus",
 		DESC "take the normal bus route",
 		TIME,
@@ -71,6 +71,7 @@ func TestNextToken(t *testing.T) {
 		{token.GREY, "GREY"},
 		{token.RPAREN, ")"},
 		{token.PERIOD, "."},
+		{token.LET, "LET"},
 		{token.IDENT, "commute"},
 		{token.ASSIGN, "="},
 		{token.LPAREN, "("},
