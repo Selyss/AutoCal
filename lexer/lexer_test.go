@@ -23,7 +23,16 @@ func TestNextToken(t *testing.T) {
 	ELSE, ADD (
 		TITLE "Rest day.",
 		GREY
-	).`
+	).
+	
+	commute = (
+		TITLE "Bus",
+		DESC "take the normal bus route",
+		TIME,
+		RED
+	).
+	  
+	IF DAY IS 1, ADD commute("9am").`
 
 	tests := []struct {
 		expectedType    token.TokenType
@@ -60,6 +69,31 @@ func TestNextToken(t *testing.T) {
 		{token.STRING, "Rest day."},
 		{token.COMMA, ","},
 		{token.GREY, "GREY"},
+		{token.RPAREN, ")"},
+		{token.PERIOD, "."},
+		{token.IDENT, "commute"},
+		{token.ASSIGN, "="},
+		{token.LPAREN, "("},
+		{token.TITLE, "TITLE"},
+		{token.STRING, "Bus"},
+		{token.COMMA, ","},
+		{token.DESC, "DESC"},
+		{token.STRING, "take the normal bus route"},
+		{token.COMMA, ","},
+		{token.TIME, "TIME"},
+		{token.COMMA, ","},
+		{token.RED, "RED"},
+		{token.RPAREN, ")"},
+		{token.PERIOD, "."},
+		{token.IF, "IF"},
+		{token.DAY, "DAY"},
+		{token.IS, "IS"},
+		{token.INT, "1"},
+		{token.COMMA, ","},
+		{token.ADD, "ADD"},
+		{token.IDENT, "commute"},
+		{token.LPAREN, "("},
+		{token.STRING, "9am"},
 		{token.RPAREN, ")"},
 		{token.PERIOD, "."},
 		{token.EOF, ""},

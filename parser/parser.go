@@ -66,18 +66,6 @@ func (p *Parser) parseStatement() ast.Statement {
 	}
 }
 
-func (p *Parser) parseAddStatement() *ast.AddStatement {
-	stmt := &ast.AddStatement{Token: p.curToken}
-	if !p.expectPeek(token.STRING) {
-		return nil
-	}
-	stmt.Name = &ast.Identifier{Token: p.curToken, Value: p.curToken.Literal}
-	if !p.expectPeek(token.PERIOD) {
-		return nil
-	}
-	return stmt
-}
-
 func (p *Parser) curTokenIs(t token.TokenType) bool {
 	return p.curToken.Type == t
 }

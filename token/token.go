@@ -23,8 +23,10 @@ const (
 	GREY  = "GREY"
 
 	// Operators
-	GThan = ">"
-	LThan = "<"
+	GThan  = ">"
+	LThan  = "<"
+	ASSIGN = "="
+	IS     = "IS" // assign
 
 	// Delimiters
 	COMMA  = ","
@@ -60,6 +62,7 @@ var keywords = map[string]TokenType{
 	"TIME":   TIME,
 	"TITLE":  TITLE,
 	"DESC":   DESC,
+	"IS":     IS,
 }
 
 func LookupIdent(ident string) TokenType {

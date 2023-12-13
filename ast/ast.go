@@ -28,15 +28,6 @@ func (p *Program) TokenLiteral() string {
 	}
 }
 
-type AddStatement struct {
-	Value Expression
-	Name  *Identifier
-	Token token.Token // the token.ADD token
-}
-
-func (ls *AddStatement) statementNode()       {}
-func (ls *AddStatement) TokenLiteral() string { return ls.Token.Literal }
-
 type Identifier struct {
 	Token token.Token // the token.IDENT token
 	Value string
