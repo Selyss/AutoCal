@@ -22,16 +22,9 @@ const (
 	GREY = "GREY"
 
 	// Operators
-	GThan    = ">"
-	LThan    = "<"
-	ASSIGN   = "="
-	BANG     = "!"
-	MINUS    = "-"
-	EQ       = "=="     // TODO: replace?
-	NOT_EQ   = "!= NOT" // TODO: replace?
-	PLUS     = "+"
-	ASTERISK = "*"
-	SLASH    = "/"
+	ASSIGN = "="
+	EQ     = "=="     // TODO: replace?
+	NOT_EQ = "!= NOT" // TODO: replace?
 
 	// Delimiters
 	COMMA  = ","
