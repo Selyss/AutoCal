@@ -23,8 +23,8 @@ const (
 
 	// Operators
 	ASSIGN = "="
-	EQ     = "=="     // TODO: replace?
-	NOT_EQ = "!= NOT" // TODO: replace?
+	EQ     = "IS"
+	NOT_EQ = "IS NOT"
 
 	// Delimiters
 	COMMA  = ","

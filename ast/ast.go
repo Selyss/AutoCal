@@ -26,7 +26,7 @@ func (ie *InfixExpression) String() string {
 }
 
 type PrefixExpression struct {
-	Token    token.Token // The prefix token, e.g. !
+	Token    token.Token // The prefix token, e.g. NOT
 	Operator string
 	Right    Expression
 }

@@ -15,14 +15,8 @@ func TestParsingInfixExpressions(t *testing.T) {
 		operator   string
 		rightValue int64
 	}{
-		{"5 + 5.", 5, "+", 5},
-		{"5 - 5.", 5, "-", 5},
-		{"5 * 5.", 5, "*", 5},
-		{"5 / 5.", 5, "/", 5},
-		{"5 > 5.", 5, ">", 5},
-		{"5 < 5.", 5, "<", 5},
-		{"5 == 5.", 5, "==", 5},
-		{"5 != 5.", 5, "!=", 5},
+		{"5 IS 5.", 5, "IS", 5},
+		{"5 IS NOT 6.", 5, "IS NOT", 6},
 	}
 	for _, tt := range infixTests {
 		l := lexer.New(tt.input)
