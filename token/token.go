@@ -24,10 +24,16 @@ const (
 	GREY  = "GREY"
 
 	// Operators
-	GThan  = ">"
-	LThan  = "<"
-	ASSIGN = "="
-	IS     = "IS" // assign
+	GThan    = ">"
+	LThan    = "<"
+	ASSIGN   = "="
+	BANG     = "!"
+	MINUS    = "-"
+	EQ       = "=="     // TODO: replace?
+	NOT_EQ   = "!= NOT" // TODO: replace?
+	PLUS     = "+"
+	ASTERISK = "*"
+	SLASH    = "/"
 
 	// Delimiters
 	COMMA  = ","
@@ -63,7 +69,8 @@ var keywords = map[string]TokenType{
 	"TIME":   TIME,
 	"TITLE":  TITLE,
 	"DESC":   DESC,
-	"IS":     IS,
+	"IS":     EQ,
+	"IS NOT": NOT_EQ,
 	"LET":    LET,
 }
 

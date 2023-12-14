@@ -84,7 +84,7 @@ func TestNextToken(t *testing.T) {
 		{token.PERIOD, "."},
 		{token.IF, "IF"},
 		{token.DAY, "DAY"},
-		{token.IS, "IS"},
+		{token.EQ, "IS"},
 		{token.INT, "1"},
 		{token.COMMA, ","},
 		{token.ADD, "ADD"},
